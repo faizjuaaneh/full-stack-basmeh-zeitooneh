@@ -1,0 +1,68 @@
+<br>
+<br>
+<form id="formmm">
+    <div class="col-sx-3" ng-repeat="item in student track by $index">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <th> ID : </th>
+                <td class="panel-ID" ng-class="{ 'completed text-muted' : item.completed} " ng-hide="item.editing">{{item.ID}}</td>
+                <input type="text" class="form-control" ng-show="item.editing" ng-model="item.ID">
+                <br>
+                <th> Cours : </th>
+                <td class="panel-Cours" ng-class="{ 'completed text-muted' : item.completed} " ng-hide="item.editing">{{item.Cours}}</td>
+                <input type="text" class="form-control" ng-show="item.editing" ng-model="item.ID">
+                <br>
+                <th> FullName :</th>
+                <td class="panel-FullName" ng-class="{ 'completed text-muted' : item.completed} " ng-hide="item.editing">{{item.FullName}}</td>
+                <input type="text" class="form-control" ng-show="item.editing" ng-model="item.FullName">
+                <br>
+                <th> Age :</th>
+                <td class="panel-Age" ng-class="{ 'completed text-muted' : item.completed} " ng-hide="item.editing">{{item.Age}}</td>
+                <input type="text" class="form-control" ng-show="item.editing" ng-model="item.Age">
+                <br>
+                <th> Date :</th>
+                <td class="panel-Date" ng-class="{ 'completed text-muted' : item.completed} " ng-hide="item.editing">{{item.Date}}</td>
+                <input type="text" class="form-control" ng-show="item.editing" ng-model="item.Date">
+                <br>
+                <th> Gender :</th>
+                <td class="panel-gender" ng-class="{ 'completed text-muted' : item.completed} " ng-hide="item.editing">{{item.gender}}</td>
+                <input type="text" class="form-control" ng-show="item.editing" ng-model="item.gender">
+                <br>
+                <th> Married :</th>
+                <td class="panel-married" ng-class="{ 'completed text-muted' : item.completed} " ng-hide="item.editing">{{item.married}}</td>
+                <input type="text" class="form-control" ng-show="item.editing" ng-model="item.married">
+                <br>
+                <br>
+                <textarea type="text" class="form-control" ng-show="item.editing" ng-model="item.NameCours"></textarea>
+                <button class=" btn btn-danger btn-xs glyphicon glyphicon-trash pull-right" ng-click="deletestudent(item, $index)"></button>
+                <button class=" btn btn-warning btn-xs glyphicon glyphicon-pencil pull-right" ng-click="item.editing=true" ng-hide="item.editing"></button>
+                <button class=" btn btn-primary btn-xs glyphicon glyphicon-floppy-disk pull-right" ng-click="item.editing = false" ng-show="item.editing"></button>
+                <button class=" btn btn-success btn-xs glyphicon glyphicon-remove pull-right" ng-click="updatestudent(item, $index)" ng-show="item.editing"></button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<style>
+    #formmm {
+        margin: auto;
+        position: relative;
+        width: 650px;
+        /*                height: 650px;*/
+        font-family: inherit, Geneva, sans-serif;
+        font-size: 14px;
+        font-style: bold;
+        line-height: 24px;
+        font-weight: bold;
+        color: #000;
+        text-decoration: none;
+        border-radius: 20px;
+        padding: 25px;
+        border: 10px solid #00B906;
+        border: inset 5px solid #00B906;
+        -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    }
+</style>
